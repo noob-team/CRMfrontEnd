@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- sidebar and navbar css -->
+    <link rel="stylesheet" href="./css/sidebarAndNavBar.css">
+    <!-- contact page styles -->
+    <link rel="stylesheet" href="./css/meeting-styles.css">
+
+    <title>Meetings</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class = "center indigo-text text-darken-3">Meetings</h1>
+        <div class="col s12">
+            <form class="col offset-s1 s7">
+                <div class="row">
+                    <div class="input-field offset-m1 col s8 m7">
+                        <i class="material-icons prefix">search</i>
+                        <input type = "text" name = "search" id="searchBar" class = "validate">
+                        <label for="searchBar">Search</label>
+                    </div>
+                    <div class="input-field col s4 m3">
+                        <select id = "searchBy" name = "searchby">
+                            <option value="Meeting Name" selected>Meeting Name</option>
+                            <option value="Status">Status</option>
+                            <option value="Priority">Priority</option>
+                            <option value="Due Date">Due Date</option>
+                            <option value="Start Date">Start Date</option>
+                            <option value="Assigned User">Assigned User</option>
+                        </select>
+                        <label>Search By</label>
+                    </div>
+                </div>
+            </form>
+            <div class="fixed-action-btn">
+                <!-- modal trigger -->
+                <a id = "add-btn" class="btn-floating btn btn-large waves-effect waves-light indigo modal-trigger" href = "#modal">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+        <div id = "act-on-multiple-select" class="center">
+            <a href="" id = "delete-selected" class = "tooltipped" data-position="bottom" data-tooltip="Delete Selected Items"><i class = "fa fa-trash" style = "font-size: 25px; color: red;"></i></a>
+            <a href="" id = "completed-selected" class = "tooltipped" data-position="bottom" data-tooltip="Completed Selected Items"><i class = "fa fa-check-circle" style = "font-size: 25px; color: green;"></i></a>
+        </div>
+        <!-- tasks display -->
+        <table class = "centered highlight striped responsive-table">
+            <thead>
+              <tr>
+                  <th>
+                        <label>
+                            <input id = "selectAll" type="checkbox" class="filled-in" />
+                            <span></span>
+                        </label>
+                  </th>
+                  <th>Meeting Name</th>
+                  <th>Status</th>
+                  <th>Priority</th>
+                  <th>Due Date</th>
+                  <th>Start Date</th>
+                  <th>Assigned user</th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">Annual Budget Meeting</td>
+                    <td class = "searchItems status_td">Not started</td>
+                    <td class = "searchItems priority_td">High</td>
+                    <td class = "searchItems due_date_td">Jun 24, 2019 | 07:01 PM</td>
+                    <td class = "searchItems start_date_td">Jun 20, 2019 | 04:01 PM</td>
+                    <td class = "searchItems assigned_user_td">Rahul</td>
+                    <td class="description_td hide">Presentation of yearly income and expenditure</td>
+                    <td>
+                        <a href="" class = "tooltipped check" data-position = "bottom" data-tooltip = "set completed"><i class = "fa fa-check"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">Building Maintenance</td>
+                    <td class = "searchItems status_td">Started</td>
+                    <td class = "searchItems priority_td">Normal</td>
+                    <td class = "searchItems due_date_td">Jun 27, 2019 | 09:01 AM</td>
+                    <td class = "searchItems start_date_td">Jun 21, 2019 | 07:01 AM</td>
+                    <td class = "searchItems assigned_user_td">Reevan</td>
+                    <td class="description_td hide">Important building issues to be sorted</td>
+                    <td>
+                        <a href="" class = "tooltipped check" data-position = "bottom" data-tooltip = "set completed"><i class = "fa fa-check"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">New Product Lanch</td>
+                    <td class = "searchItems status_td">Cancelled</td>
+                    <td class = "searchItems priority_td">Urgent</td>
+                    <td class = "searchItems due_date_td">Jun 25, 2019 | 12:13 AM</td>
+                    <td class = "searchItems start_date_td">Jun 23, 2019 | 05:01 PM</td>
+                    <td class = "searchItems assigned_user_td">Suraj</td>
+                    <td class="description_td hide">Presentation on product launch plans</td>
+                    <td>
+                        <a href="" class = "tooltipped check" data-position = "bottom" data-tooltip = "set completed"><i class = "fa fa-check"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 id = "modal-heading" class = "center indigo-text">Enter Meeting Details</h4>
+            <!-- form will be displayed by js -->
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- include sidebar and navbar -->
+    <script src = "./js/sidebarAndNavBar.js" ></script>
+    <!-- materialize initialization -->
+    <script src = "./js/materializeInitialization.js" ></script>
+    <!-- import contact form contents -->
+    <script src = "./js/meeting-form-contents.js" ></script>
+    <!-- contact-form modal content setup -->
+    <script src = "./js/meeting.js" ></script>
+
+</body>
+</html>

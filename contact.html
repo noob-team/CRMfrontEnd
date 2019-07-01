@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- sidebar and navbar css -->
+    <link rel="stylesheet" href="./css/sidebarAndNavBar.css">
+    <!-- contact page styles -->
+    <link rel="stylesheet" href="./css/contact-styles.css">
+
+    <title>Contact</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <h1 class = "center indigo-text text-darken-3">Contact</h1>
+        <div class="col s12">
+            <form class="col offset-s1 s7">
+                <div class="row">
+                    <div class="input-field col offset-m2 s12 m8">
+                        <i class="material-icons prefix">search</i>
+                        <input type = "text" name = "search" id="searchBar" class = "validate">
+                        <label for="searchBar">Search</label>
+                    </div>
+                </div>
+            </form>
+            <div class="fixed-action-btn">
+                <!-- modal trigger -->
+                <a id = "add-btn" class="btn-floating btn btn-large waves-effect waves-light indigo modal-trigger" href = "#modal">
+                    <i class="material-icons">add</i>
+                </a>
+            </div>
+        </div>
+        <div id = "act-on-multiple-select" class="center">
+            <a href="" id = "delete-selected" class = "tooltipped" data-position="bottom" data-tooltip="Delete Selected Items"><i class = "fa fa-trash" style = "font-size: 25px; color: red;"></i></a>
+        </div>
+        <!-- contacts display -->
+        <table class = "centered highlight striped responsive-table">
+            <thead>
+              <tr>
+                  <th>
+                        <label>
+                            <input id = "selectAll" type="checkbox" class="filled-in" />
+                            <span></span>
+                        </label>
+                  </th>
+                  <th>Name</th>
+                  <th>Account</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th></th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">Rahul</td>
+                    <td class = "accounts_td">Trial</td>
+                    <td class = "searchItems email_td">rahul@gmail.com</td>
+                    <td class = "searchItems phone_td">9988776655</td>
+                    <td class = "city_td hide">Karkala</td>
+                    <td class="state_td hide">Karnataka</td>
+                    <td class="country_td hide">India</td>
+                    <td>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">Reevan</td>
+                    <td class = "accounts_td">Trial</td>
+                    <td class = "searchItems email_td">reevan1998@gmail.com</td>
+                    <td class = "searchItems phone_td">9988776655</td>
+                    <td class = "city_td hide">Pakshikere Church</td>
+                    <td class="state_td hide">Karnataka</td>
+                    <td class="country_td hide">India</td>
+                    <td>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="checkbox" class="filled-in checkbox" />
+                            <span></span>
+                        </label>
+                    </td>
+                    <td class = "searchItems name_td">Suraj</td>
+                    <td class = "accounts_td">Trial</td>
+                    <td class = "searchItems email_td">suraj@gmail.com</td>
+                    <td class = "searchItems phone_td">9988776655</td>
+                    <td class = "city_td hide">Udupi</td>
+                    <td class="state_td hide">Karnataka</td>
+                    <td class="country_td hide">India</td>
+                    <td>
+                        <a href="#modal" class = "tooltipped modal-trigger view" data-position = "bottom" data-tooltip = "view"><i class = "fa fa-eye"></i></a>
+                        <a href="#modal" class = "tooltipped modal-trigger edit" data-position = "bottom" data-tooltip = "edit"><i class = "fa fa-edit"></i></a>
+                        <a href="" class = "tooltipped" data-position = "bottom" data-tooltip = "delete"><i class = "fa fa-trash"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h4 id = "modal-heading" class = "center indigo-text">Enter Contact Details</h4>
+            <!-- form will be displayed by js -->
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- include sidebar and navbar -->
+    <script src = "./js/sidebarAndNavBar.js" ></script>
+    <!-- materialize initialization -->
+    <script src = "./js/materializeInitialization.js" ></script>
+    <!-- import contact form contents -->
+    <script src = "./js/contact-form-contents.js" ></script>
+    <!-- contact-form modal content setup -->
+    <script src = "./js/contact.js" ></script>
+
+</body>
+</html>
